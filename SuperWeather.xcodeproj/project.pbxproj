@@ -1,0 +1,362 @@
+// !$*UTF8*$!
+{
+	archiveVersion = 1;
+	classes = {
+	};
+	objectVersion = 50;
+	objects = {
+
+/* Begin PBXBuildFile section */
+		AB1F481823E8C85900676A30 /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = AB1F481723E8C85900676A30 /* AppDelegate.swift */; };
+		AB1F481A23E8C85900676A30 /* SceneDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = AB1F481923E8C85900676A30 /* SceneDelegate.swift */; };
+		AB1F481C23E8C85900676A30 /* ViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = AB1F481B23E8C85900676A30 /* ViewController.swift */; };
+		AB1F481F23E8C85900676A30 /* Main.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = AB1F481D23E8C85900676A30 /* Main.storyboard */; };
+		AB1F482223E8C85900676A30 /* SuperWeather.xcdatamodeld in Sources */ = {isa = PBXBuildFile; fileRef = AB1F482023E8C85900676A30 /* SuperWeather.xcdatamodeld */; };
+		AB1F482423E8C85B00676A30 /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = AB1F482323E8C85B00676A30 /* Assets.xcassets */; };
+		AB1F482723E8C85B00676A30 /* LaunchScreen.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = AB1F482523E8C85B00676A30 /* LaunchScreen.storyboard */; };
+		AB1F482F23E8C8B300676A30 /* WeatherGetter.swift in Sources */ = {isa = PBXBuildFile; fileRef = AB1F482E23E8C8B300676A30 /* WeatherGetter.swift */; };
+/* End PBXBuildFile section */
+
+/* Begin PBXFileReference section */
+		AB1F481423E8C85900676A30 /* SuperWeather.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = SuperWeather.app; sourceTree = BUILT_PRODUCTS_DIR; };
+		AB1F481723E8C85900676A30 /* AppDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppDelegate.swift; sourceTree = "<group>"; };
+		AB1F481923E8C85900676A30 /* SceneDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SceneDelegate.swift; sourceTree = "<group>"; };
+		AB1F481B23E8C85900676A30 /* ViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ViewController.swift; sourceTree = "<group>"; };
+		AB1F481E23E8C85900676A30 /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/Main.storyboard; sourceTree = "<group>"; };
+		AB1F482123E8C85900676A30 /* SuperWeather.xcdatamodel */ = {isa = PBXFileReference; lastKnownFileType = wrapper.xcdatamodel; path = SuperWeather.xcdatamodel; sourceTree = "<group>"; };
+		AB1F482323E8C85B00676A30 /* Assets.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = Assets.xcassets; sourceTree = "<group>"; };
+		AB1F482623E8C85B00676A30 /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/LaunchScreen.storyboard; sourceTree = "<group>"; };
+		AB1F482823E8C85B00676A30 /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
+		AB1F482E23E8C8B300676A30 /* WeatherGetter.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = WeatherGetter.swift; sourceTree = "<group>"; };
+/* End PBXFileReference section */
+
+/* Begin PBXFrameworksBuildPhase section */
+		AB1F481123E8C85900676A30 /* Frameworks */ = {
+			isa = PBXFrameworksBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+/* End PBXFrameworksBuildPhase section */
+
+/* Begin PBXGroup section */
+		AB1F480B23E8C85900676A30 = {
+			isa = PBXGroup;
+			children = (
+				AB1F481623E8C85900676A30 /* SuperWeather */,
+				AB1F481523E8C85900676A30 /* Products */,
+			);
+			sourceTree = "<group>";
+		};
+		AB1F481523E8C85900676A30 /* Products */ = {
+			isa = PBXGroup;
+			children = (
+				AB1F481423E8C85900676A30 /* SuperWeather.app */,
+			);
+			name = Products;
+			sourceTree = "<group>";
+		};
+		AB1F481623E8C85900676A30 /* SuperWeather */ = {
+			isa = PBXGroup;
+			children = (
+				AB1F481723E8C85900676A30 /* AppDelegate.swift */,
+				AB1F481923E8C85900676A30 /* SceneDelegate.swift */,
+				AB1F481B23E8C85900676A30 /* ViewController.swift */,
+				AB1F481D23E8C85900676A30 /* Main.storyboard */,
+				AB1F482323E8C85B00676A30 /* Assets.xcassets */,
+				AB1F482523E8C85B00676A30 /* LaunchScreen.storyboard */,
+				AB1F482823E8C85B00676A30 /* Info.plist */,
+				AB1F482023E8C85900676A30 /* SuperWeather.xcdatamodeld */,
+				AB1F482E23E8C8B300676A30 /* WeatherGetter.swift */,
+			);
+			path = SuperWeather;
+			sourceTree = "<group>";
+		};
+/* End PBXGroup section */
+
+/* Begin PBXNativeTarget section */
+		AB1F481323E8C85900676A30 /* SuperWeather */ = {
+			isa = PBXNativeTarget;
+			buildConfigurationList = AB1F482B23E8C85B00676A30 /* Build configuration list for PBXNativeTarget "SuperWeather" */;
+			buildPhases = (
+				AB1F481023E8C85900676A30 /* Sources */,
+				AB1F481123E8C85900676A30 /* Frameworks */,
+				AB1F481223E8C85900676A30 /* Resources */,
+			);
+			buildRules = (
+			);
+			dependencies = (
+			);
+			name = SuperWeather;
+			productName = SuperWeather;
+			productReference = AB1F481423E8C85900676A30 /* SuperWeather.app */;
+			productType = "com.apple.product-type.application";
+		};
+/* End PBXNativeTarget section */
+
+/* Begin PBXProject section */
+		AB1F480C23E8C85900676A30 /* Project object */ = {
+			isa = PBXProject;
+			attributes = {
+				LastSwiftUpdateCheck = 1130;
+				LastUpgradeCheck = 1130;
+				ORGANIZATIONNAME = "Viktor Rezvantsev";
+				TargetAttributes = {
+					AB1F481323E8C85900676A30 = {
+						CreatedOnToolsVersion = 11.3.1;
+					};
+				};
+			};
+			buildConfigurationList = AB1F480F23E8C85900676A30 /* Build configuration list for PBXProject "SuperWeather" */;
+			compatibilityVersion = "Xcode 9.3";
+			developmentRegion = en;
+			hasScannedForEncodings = 0;
+			knownRegions = (
+				en,
+				Base,
+			);
+			mainGroup = AB1F480B23E8C85900676A30;
+			productRefGroup = AB1F481523E8C85900676A30 /* Products */;
+			projectDirPath = "";
+			projectRoot = "";
+			targets = (
+				AB1F481323E8C85900676A30 /* SuperWeather */,
+			);
+		};
+/* End PBXProject section */
+
+/* Begin PBXResourcesBuildPhase section */
+		AB1F481223E8C85900676A30 /* Resources */ = {
+			isa = PBXResourcesBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+				AB1F482723E8C85B00676A30 /* LaunchScreen.storyboard in Resources */,
+				AB1F482423E8C85B00676A30 /* Assets.xcassets in Resources */,
+				AB1F481F23E8C85900676A30 /* Main.storyboard in Resources */,
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+/* End PBXResourcesBuildPhase section */
+
+/* Begin PBXSourcesBuildPhase section */
+		AB1F481023E8C85900676A30 /* Sources */ = {
+			isa = PBXSourcesBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+				AB1F482223E8C85900676A30 /* SuperWeather.xcdatamodeld in Sources */,
+				AB1F482F23E8C8B300676A30 /* WeatherGetter.swift in Sources */,
+				AB1F481C23E8C85900676A30 /* ViewController.swift in Sources */,
+				AB1F481823E8C85900676A30 /* AppDelegate.swift in Sources */,
+				AB1F481A23E8C85900676A30 /* SceneDelegate.swift in Sources */,
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+/* End PBXSourcesBuildPhase section */
+
+/* Begin PBXVariantGroup section */
+		AB1F481D23E8C85900676A30 /* Main.storyboard */ = {
+			isa = PBXVariantGroup;
+			children = (
+				AB1F481E23E8C85900676A30 /* Base */,
+			);
+			name = Main.storyboard;
+			sourceTree = "<group>";
+		};
+		AB1F482523E8C85B00676A30 /* LaunchScreen.storyboard */ = {
+			isa = PBXVariantGroup;
+			children = (
+				AB1F482623E8C85B00676A30 /* Base */,
+			);
+			name = LaunchScreen.storyboard;
+			sourceTree = "<group>";
+		};
+/* End PBXVariantGroup section */
+
+/* Begin XCBuildConfiguration section */
+		AB1F482923E8C85B00676A30 /* Debug */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				ALWAYS_SEARCH_USER_PATHS = NO;
+				CLANG_ANALYZER_NONNULL = YES;
+				CLANG_ANALYZER_NUMBER_OBJECT_CONVERSION = YES_AGGRESSIVE;
+				CLANG_CXX_LANGUAGE_STANDARD = "gnu++14";
+				CLANG_CXX_LIBRARY = "libc++";
+				CLANG_ENABLE_MODULES = YES;
+				CLANG_ENABLE_OBJC_ARC = YES;
+				CLANG_ENABLE_OBJC_WEAK = YES;
+				CLANG_WARN_BLOCK_CAPTURE_AUTORELEASING = YES;
+				CLANG_WARN_BOOL_CONVERSION = YES;
+				CLANG_WARN_COMMA = YES;
+				CLANG_WARN_CONSTANT_CONVERSION = YES;
+				CLANG_WARN_DEPRECATED_OBJC_IMPLEMENTATIONS = YES;
+				CLANG_WARN_DIRECT_OBJC_ISA_USAGE = YES_ERROR;
+				CLANG_WARN_DOCUMENTATION_COMMENTS = YES;
+				CLANG_WARN_EMPTY_BODY = YES;
+				CLANG_WARN_ENUM_CONVERSION = YES;
+				CLANG_WARN_INFINITE_RECURSION = YES;
+				CLANG_WARN_INT_CONVERSION = YES;
+				CLANG_WARN_NON_LITERAL_NULL_CONVERSION = YES;
+				CLANG_WARN_OBJC_IMPLICIT_RETAIN_SELF = YES;
+				CLANG_WARN_OBJC_LITERAL_CONVERSION = YES;
+				CLANG_WARN_OBJC_ROOT_CLASS = YES_ERROR;
+				CLANG_WARN_RANGE_LOOP_ANALYSIS = YES;
+				CLANG_WARN_STRICT_PROTOTYPES = YES;
+				CLANG_WARN_SUSPICIOUS_MOVE = YES;
+				CLANG_WARN_UNGUARDED_AVAILABILITY = YES_AGGRESSIVE;
+				CLANG_WARN_UNREACHABLE_CODE = YES;
+				CLANG_WARN__DUPLICATE_METHOD_MATCH = YES;
+				COPY_PHASE_STRIP = NO;
+				DEBUG_INFORMATION_FORMAT = dwarf;
+				ENABLE_STRICT_OBJC_MSGSEND = YES;
+				ENABLE_TESTABILITY = YES;
+				GCC_C_LANGUAGE_STANDARD = gnu11;
+				GCC_DYNAMIC_NO_PIC = NO;
+				GCC_NO_COMMON_BLOCKS = YES;
+				GCC_OPTIMIZATION_LEVEL = 0;
+				GCC_PREPROCESSOR_DEFINITIONS = (
+					"DEBUG=1",
+					"$(inherited)",
+				);
+				GCC_WARN_64_TO_32_BIT_CONVERSION = YES;
+				GCC_WARN_ABOUT_RETURN_TYPE = YES_ERROR;
+				GCC_WARN_UNDECLARED_SELECTOR = YES;
+				GCC_WARN_UNINITIALIZED_AUTOS = YES_AGGRESSIVE;
+				GCC_WARN_UNUSED_FUNCTION = YES;
+				GCC_WARN_UNUSED_VARIABLE = YES;
+				IPHONEOS_DEPLOYMENT_TARGET = 13.2;
+				MTL_ENABLE_DEBUG_INFO = INCLUDE_SOURCE;
+				MTL_FAST_MATH = YES;
+				ONLY_ACTIVE_ARCH = YES;
+				SDKROOT = iphoneos;
+				SWIFT_ACTIVE_COMPILATION_CONDITIONS = DEBUG;
+				SWIFT_OPTIMIZATION_LEVEL = "-Onone";
+			};
+			name = Debug;
+		};
+		AB1F482A23E8C85B00676A30 /* Release */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				ALWAYS_SEARCH_USER_PATHS = NO;
+				CLANG_ANALYZER_NONNULL = YES;
+				CLANG_ANALYZER_NUMBER_OBJECT_CONVERSION = YES_AGGRESSIVE;
+				CLANG_CXX_LANGUAGE_STANDARD = "gnu++14";
+				CLANG_CXX_LIBRARY = "libc++";
+				CLANG_ENABLE_MODULES = YES;
+				CLANG_ENABLE_OBJC_ARC = YES;
+				CLANG_ENABLE_OBJC_WEAK = YES;
+				CLANG_WARN_BLOCK_CAPTURE_AUTORELEASING = YES;
+				CLANG_WARN_BOOL_CONVERSION = YES;
+				CLANG_WARN_COMMA = YES;
+				CLANG_WARN_CONSTANT_CONVERSION = YES;
+				CLANG_WARN_DEPRECATED_OBJC_IMPLEMENTATIONS = YES;
+				CLANG_WARN_DIRECT_OBJC_ISA_USAGE = YES_ERROR;
+				CLANG_WARN_DOCUMENTATION_COMMENTS = YES;
+				CLANG_WARN_EMPTY_BODY = YES;
+				CLANG_WARN_ENUM_CONVERSION = YES;
+				CLANG_WARN_INFINITE_RECURSION = YES;
+				CLANG_WARN_INT_CONVERSION = YES;
+				CLANG_WARN_NON_LITERAL_NULL_CONVERSION = YES;
+				CLANG_WARN_OBJC_IMPLICIT_RETAIN_SELF = YES;
+				CLANG_WARN_OBJC_LITERAL_CONVERSION = YES;
+				CLANG_WARN_OBJC_ROOT_CLASS = YES_ERROR;
+				CLANG_WARN_RANGE_LOOP_ANALYSIS = YES;
+				CLANG_WARN_STRICT_PROTOTYPES = YES;
+				CLANG_WARN_SUSPICIOUS_MOVE = YES;
+				CLANG_WARN_UNGUARDED_AVAILABILITY = YES_AGGRESSIVE;
+				CLANG_WARN_UNREACHABLE_CODE = YES;
+				CLANG_WARN__DUPLICATE_METHOD_MATCH = YES;
+				COPY_PHASE_STRIP = NO;
+				DEBUG_INFORMATION_FORMAT = "dwarf-with-dsym";
+				ENABLE_NS_ASSERTIONS = NO;
+				ENABLE_STRICT_OBJC_MSGSEND = YES;
+				GCC_C_LANGUAGE_STANDARD = gnu11;
+				GCC_NO_COMMON_BLOCKS = YES;
+				GCC_WARN_64_TO_32_BIT_CONVERSION = YES;
+				GCC_WARN_ABOUT_RETURN_TYPE = YES_ERROR;
+				GCC_WARN_UNDECLARED_SELECTOR = YES;
+				GCC_WARN_UNINITIALIZED_AUTOS = YES_AGGRESSIVE;
+				GCC_WARN_UNUSED_FUNCTION = YES;
+				GCC_WARN_UNUSED_VARIABLE = YES;
+				IPHONEOS_DEPLOYMENT_TARGET = 13.2;
+				MTL_ENABLE_DEBUG_INFO = NO;
+				MTL_FAST_MATH = YES;
+				SDKROOT = iphoneos;
+				SWIFT_COMPILATION_MODE = wholemodule;
+				SWIFT_OPTIMIZATION_LEVEL = "-O";
+				VALIDATE_PRODUCT = YES;
+			};
+			name = Release;
+		};
+		AB1F482C23E8C85B00676A30 /* Debug */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
+				CODE_SIGN_STYLE = Automatic;
+				INFOPLIST_FILE = SuperWeather/Info.plist;
+				LD_RUNPATH_SEARCH_PATHS = (
+					"$(inherited)",
+					"@executable_path/Frameworks",
+				);
+				PRODUCT_BUNDLE_IDENTIFIER = com.geroid.SuperWeather;
+				PRODUCT_NAME = "$(TARGET_NAME)";
+				SWIFT_VERSION = 5.0;
+				TARGETED_DEVICE_FAMILY = "1,2";
+			};
+			name = Debug;
+		};
+		AB1F482D23E8C85B00676A30 /* Release */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
+				CODE_SIGN_STYLE = Automatic;
+				INFOPLIST_FILE = SuperWeather/Info.plist;
+				LD_RUNPATH_SEARCH_PATHS = (
+					"$(inherited)",
+					"@executable_path/Frameworks",
+				);
+				PRODUCT_BUNDLE_IDENTIFIER = com.geroid.SuperWeather;
+				PRODUCT_NAME = "$(TARGET_NAME)";
+				SWIFT_VERSION = 5.0;
+				TARGETED_DEVICE_FAMILY = "1,2";
+			};
+			name = Release;
+		};
+/* End XCBuildConfiguration section */
+
+/* Begin XCConfigurationList section */
+		AB1F480F23E8C85900676A30 /* Build configuration list for PBXProject "SuperWeather" */ = {
+			isa = XCConfigurationList;
+			buildConfigurations = (
+				AB1F482923E8C85B00676A30 /* Debug */,
+				AB1F482A23E8C85B00676A30 /* Release */,
+			);
+			defaultConfigurationIsVisible = 0;
+			defaultConfigurationName = Release;
+		};
+		AB1F482B23E8C85B00676A30 /* Build configuration list for PBXNativeTarget "SuperWeather" */ = {
+			isa = XCConfigurationList;
+			buildConfigurations = (
+				AB1F482C23E8C85B00676A30 /* Debug */,
+				AB1F482D23E8C85B00676A30 /* Release */,
+			);
+			defaultConfigurationIsVisible = 0;
+			defaultConfigurationName = Release;
+		};
+/* End XCConfigurationList section */
+
+/* Begin XCVersionGroup section */
+		AB1F482023E8C85900676A30 /* SuperWeather.xcdatamodeld */ = {
+			isa = XCVersionGroup;
+			children = (
+				AB1F482123E8C85900676A30 /* SuperWeather.xcdatamodel */,
+			);
+			currentVersion = AB1F482123E8C85900676A30 /* SuperWeather.xcdatamodel */;
+			path = SuperWeather.xcdatamodeld;
+			sourceTree = "<group>";
+			versionGroupType = wrapper.xcdatamodel;
+		};
+/* End XCVersionGroup section */
+	};
+	rootObject = AB1F480C23E8C85900676A30 /* Project object */;
+}
