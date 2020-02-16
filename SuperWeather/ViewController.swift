@@ -25,6 +25,7 @@ class ViewController: UIViewController {
     }
     override func viewDidLoad() {
         super.viewDidLoad()
+        self.view.backgroundColor = UIColor(patternImage: UIImage(imageLiteralResourceName: "eberhard"))
         // Do any additional setup after loading the view.
         let weather = WeatherGetter(controller: self)
         weather.getWeather(city: "Taganrog")

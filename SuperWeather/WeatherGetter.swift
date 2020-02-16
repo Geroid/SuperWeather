@@ -34,7 +34,7 @@ class WeatherGetter {
                     if let jsonObj = try? JSONSerialization.jsonObject(with: data, options: .allowFragments)
                         as? NSDictionary{
                         if let mainDictionary = jsonObj.value(forKey: "main") as? NSDictionary{
-                            if let temperature = mainDictionary.value(forKey: "temp"){
+                            if let temperature = mainDictionary.value(forKey: "temp") as? Double{
                                 DispatchQueue.main.async {
                                    self.controller?.weatherLabel.text = " \(temperature)°C"
                                 }
@@ -43,18 +43,15 @@ class WeatherGetter {
                         } else {
                              print("Error: unable to find temperature in dictionary")
                      }
-                        if let timeZone = jsonObj.value(forKey: "name") as? String{
-                            if let town = timeZone as? String{
+                        if let town = jsonObj.value(forKey: "name") as? String{
                                                        DispatchQueue.main.async {
                                                            self.controller?.cityLabel.text = "\(town)"
                                                        }
-                                                    }
                         }
                         if let weatherDetails = jsonObj.value(forKey: "weather") as? Array<Any>{
-                            if let town2 = weatherDetails as? [[String: Any]] {
+                            if let weatherDesc = weatherDetails as? [[String: Any]] {
                                                        DispatchQueue.main.async {
-                                                        self.controller?.WeatherDesc.text = "\(town2[0]["description"]!)"
-                                                        //print("Debug: \(town2[0]["description"]!)")
+                                                        self.controller?.WeatherDesc.text = "\(weatherDesc[0]["description"]!)"
                                                        }
                                                     }
                         }
