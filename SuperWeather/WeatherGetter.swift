@@ -39,6 +39,11 @@ class WeatherGetter {
                                    self.controller?.weatherLabel.text = " \(temperature)°C"
                                 }
                             }
+                            if let humidity = mainDictionary.value(forKey: "humidity") as? Int{
+                                DispatchQueue.main.async {
+                                   self.controller?.humidityLabel.text = "Влажность: \(humidity)%"
+                                }
+                            }
                            
                         } else {
                              print("Error: unable to find temperature in dictionary")
@@ -47,6 +52,14 @@ class WeatherGetter {
                                                        DispatchQueue.main.async {
                                                            self.controller?.cityLabel.text = "\(town)"
                                                        }
+                        }
+                        if let windDictionary = jsonObj.value(forKey: "wind") as? NSDictionary{
+                            if let windSpeed = windDictionary.value(forKey: "speed"){
+                                DispatchQueue.main.async {
+                                   self.controller?.windSpeedLabel.text = " Скорость ветра \(windSpeed) м/с"
+                                }
+                            }
+                            
                         }
                         if let weatherDetails = jsonObj.value(forKey: "weather") as? Array<Any>{
                             if let weatherDesc = weatherDetails as? [[String: Any]] {

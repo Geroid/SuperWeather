@@ -18,6 +18,9 @@ class ViewController: UIViewController {
     @IBOutlet weak var weatherDescriptionLabel: UILabel!
     @IBOutlet weak var maxTempLabel: UILabel!
     @IBOutlet weak var WeatherDesc: UILabel!
+    @IBOutlet weak var chooseCityButton: UIButton!
+    @IBOutlet weak var humidityLabel: UILabel!
+    @IBOutlet weak var windSpeedLabel: UILabel!
     
     @IBAction func weatherButtonTapped(_ sender: UIButton) {
         let weather = WeatherGetter(controller: self)
@@ -26,6 +29,9 @@ class ViewController: UIViewController {
     override func viewDidLoad() {
         super.viewDidLoad()
         self.view.backgroundColor = UIColor(patternImage: UIImage(imageLiteralResourceName: "eberhard"))
+        //let icon = UIImage(named: "TownIcon")
+        //chooseCityButton.setImage(icon, for: .normal)
+        chooseCityButton.imageView?.contentMode = .scaleAspectFill
         // Do any additional setup after loading the view.
         let weather = WeatherGetter(controller: self)
         weather.getWeather(city: "Taganrog")
