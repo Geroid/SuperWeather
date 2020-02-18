@@ -22,15 +22,28 @@ class ViewController: UIViewController {
     @IBOutlet weak var windSpeedLabel: UILabel!
     @IBOutlet weak var humidityLabel: UILabel!
     
+    
+    @IBAction func cityButtonTapped(_ sender: UIButton) {
+        self.navigationController?.pushViewController(CityViewController(), animated: true)
+    }
+    
+
+
     @IBAction func weatherButtonTapped(_ sender: UIButton) {
         let weather = WeatherGetter(controller: self)
         weather.getWeather(city: "Таганрог")
+        //let chooseCityVC = CityViewController()
+        //self.navigationController?.pushViewController(chooseCityVC, animated: true)
+        
     }
+
+    
     override func viewDidLoad() {
         super.viewDidLoad()
         self.view.backgroundColor = UIColor(patternImage: UIImage(imageLiteralResourceName: "eberhard"))
         chooseCityButton.imageView?.contentMode = .scaleAspectFill
-       
+        
+        navigationController?.setNavigationBarHidden(true, animated: false)
         
         let weather = WeatherGetter(controller: self)
         weather.getWeather(city: "Таганрог")

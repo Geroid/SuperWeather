@@ -15,6 +15,7 @@
 		AB1F482423E8C85B00676A30 /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = AB1F482323E8C85B00676A30 /* Assets.xcassets */; };
 		AB1F482723E8C85B00676A30 /* LaunchScreen.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = AB1F482523E8C85B00676A30 /* LaunchScreen.storyboard */; };
 		AB1F482F23E8C8B300676A30 /* WeatherGetter.swift in Sources */ = {isa = PBXBuildFile; fileRef = AB1F482E23E8C8B300676A30 /* WeatherGetter.swift */; };
+		AB55B2AE23FBE4B4004C205C /* CityViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = AB55B2AD23FBE4B4004C205C /* CityViewController.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
@@ -28,6 +29,7 @@
 		AB1F482623E8C85B00676A30 /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/LaunchScreen.storyboard; sourceTree = "<group>"; };
 		AB1F482823E8C85B00676A30 /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
 		AB1F482E23E8C8B300676A30 /* WeatherGetter.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = WeatherGetter.swift; sourceTree = "<group>"; };
+		AB55B2AD23FBE4B4004C205C /* CityViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CityViewController.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -69,6 +71,7 @@
 				AB1F482823E8C85B00676A30 /* Info.plist */,
 				AB1F482023E8C85900676A30 /* SuperWeather.xcdatamodeld */,
 				AB1F482E23E8C8B300676A30 /* WeatherGetter.swift */,
+				AB55B2AD23FBE4B4004C205C /* CityViewController.swift */,
 			);
 			path = SuperWeather;
 			sourceTree = "<group>";
@@ -149,6 +152,7 @@
 				AB1F481C23E8C85900676A30 /* ViewController.swift in Sources */,
 				AB1F481823E8C85900676A30 /* AppDelegate.swift in Sources */,
 				AB1F481A23E8C85900676A30 /* SceneDelegate.swift in Sources */,
+				AB55B2AE23FBE4B4004C205C /* CityViewController.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
