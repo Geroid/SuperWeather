@@ -21,8 +21,9 @@ class WeatherGetter {
     func getWeather(city: String){
         
         let session = URLSession.shared
-        let weatherRequestURL = URL(string: "\(openWeatherMapBaseURL)?APPID=\(openWeatherMapKey)&lang=ru&q=\(city)&units=metric")!
-        
+        let myWeather = "\(openWeatherMapBaseURL)?APPID=\(openWeatherMapKey)&lang=ru&q=\(city)&units=metric"
+        let weatherRequestURL = URL(string: myWeather.addingPercentEncoding(withAllowedCharacters: .urlQueryAllowed)!)!
+                
         let dataTask = session.dataTask(with: weatherRequestURL){
             (data: Data?, response: URLResponse?, error: Error?) in
             if let error = error{

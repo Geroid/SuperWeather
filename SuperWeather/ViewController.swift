@@ -19,22 +19,21 @@ class ViewController: UIViewController {
     @IBOutlet weak var maxTempLabel: UILabel!
     @IBOutlet weak var WeatherDesc: UILabel!
     @IBOutlet weak var chooseCityButton: UIButton!
-    @IBOutlet weak var humidityLabel: UILabel!
     @IBOutlet weak var windSpeedLabel: UILabel!
+    @IBOutlet weak var humidityLabel: UILabel!
     
     @IBAction func weatherButtonTapped(_ sender: UIButton) {
         let weather = WeatherGetter(controller: self)
-        weather.getWeather(city: "Taganrog")
+        weather.getWeather(city: "Таганрог")
     }
     override func viewDidLoad() {
         super.viewDidLoad()
         self.view.backgroundColor = UIColor(patternImage: UIImage(imageLiteralResourceName: "eberhard"))
-        //let icon = UIImage(named: "TownIcon")
-        //chooseCityButton.setImage(icon, for: .normal)
         chooseCityButton.imageView?.contentMode = .scaleAspectFill
-        // Do any additional setup after loading the view.
+       
+        
         let weather = WeatherGetter(controller: self)
-        weather.getWeather(city: "Taganrog")
+        weather.getWeather(city: "Таганрог")
     }
     
     override func didReceiveMemoryWarning() {
