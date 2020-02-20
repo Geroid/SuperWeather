@@ -23,7 +23,10 @@ class ViewController: UIViewController {
     
     
     @IBAction func cityButtonTapped(_ sender: UIButton) {
-        self.navigationController?.pushViewController(CityViewController(), animated: true)
+        
+        let myCity = self.storyboard?.instantiateViewController(withIdentifier: "CityViewController") as! CityViewController
+        //let cityViewController: CityViewController = CityViewController.init()
+        self.navigationController?.pushViewController(myCity, animated: true)
     }
     
 

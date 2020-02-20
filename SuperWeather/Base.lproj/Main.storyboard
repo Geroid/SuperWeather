@@ -7,7 +7,7 @@
         <capability name="documents saved in the Xcode 8 format" minToolsVersion="8.0"/>
     </dependencies>
     <scenes>
-        <!--aaaaaaaaa-->
+        <!--View Controller-->
         <scene sceneID="tne-QT-ifu">
             <objects>
                 <viewController hidesBottomBarWhenPushed="YES" id="BYZ-38-t0r" customClass="ViewController" customModule="SuperWeather" customModuleProvider="target" sceneMemberID="viewController">
@@ -73,7 +73,7 @@
                         <color key="backgroundColor" white="0.0" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
                         <viewLayoutGuide key="safeArea" id="6Tk-OE-BBY"/>
                     </view>
-                    <navigationItem key="navigationItem" title="aaaaaaaaa" id="WuK-wc-iXe"/>
+                    <navigationItem key="navigationItem" id="WuK-wc-iXe"/>
                     <nil key="simulatedTopBarMetrics"/>
                     <connections>
                         <outlet property="WeatherDesc" destination="rhs-aO-YqP" id="SNl-vw-6ZA"/>
@@ -91,18 +91,25 @@
         <!--City View Controller-->
         <scene sceneID="ZPs-Fw-6h8">
             <objects>
-                <viewController id="rOK-ZT-E6l" customClass="CityViewController" customModule="SuperWeather" customModuleProvider="target" sceneMemberID="viewController">
+                <viewController storyboardIdentifier="CityViewController" id="rOK-ZT-E6l" customClass="CityViewController" customModule="SuperWeather" customModuleProvider="target" sceneMemberID="viewController">
                     <view key="view" contentMode="scaleToFill" id="ldr-df-t6a">
                         <rect key="frame" x="0.0" y="0.0" width="414" height="896"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
-                        <color key="backgroundColor" systemColor="systemBackgroundColor" cocoaTouchSystemColor="whiteColor"/>
+                        <subviews>
+                            <view contentMode="scaleToFill" fixedFrame="YES" translatesAutoresizingMaskIntoConstraints="NO" id="8fJ-E4-PrJ">
+                                <rect key="frame" x="0.0" y="61" width="414" height="643"/>
+                                <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
+                                <color key="backgroundColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+                            </view>
+                        </subviews>
+                        <color key="backgroundColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
                         <viewLayoutGuide key="safeArea" id="YuQ-IT-HJd"/>
                     </view>
                     <navigationItem key="navigationItem" id="CFb-53-fhL"/>
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="6un-37-01m" userLabel="First Responder" customClass="UIResponder" sceneMemberID="firstResponder"/>
             </objects>
-            <point key="canvasLocation" x="1962" y="820"/>
+            <point key="canvasLocation" x="1960.8695652173915" y="819.64285714285711"/>
         </scene>
         <!--Navigation Controller-->
         <scene sceneID="dLD-Lf-mfk">

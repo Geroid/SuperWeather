@@ -50,6 +50,13 @@ class WeatherGetter {
             print("All the weather data:\n\(dataString!)")
             var weather = Weather()
             
+            guard let jsonOb = try? JSONSerialization.jsonObject(with: data, options: .allowFragments)
+                as? Dictionary<String, Any> else {
+                    print("Error: unable to convert json data")
+                    weatherHandler(weather, error)
+                    return
+            }
+            
             guard let jsonObj = try? JSONSerialization.jsonObject(with: data, options: .allowFragments)
                 as? NSDictionary else {
                     print("Error: unable to convert json data")
@@ -91,6 +98,7 @@ class WeatherGetter {
                 }
                 
             }
+            //var name = jsonObj["weather"][0]["description"] as? [String:Any]
             if let weatherDetails = jsonObj.value(forKey: "weather") as? Array<Any>{
                 if let weatherDesc = weatherDetails as? [[String: Any]] {
                     DispatchQueue.main.async {
