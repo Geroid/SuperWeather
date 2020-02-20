@@ -11,18 +11,11 @@ import Foundation
 
 struct Weather: Codable
 {
-    var temperature : String?
-    var humidity : String?
-    var city: String?
-    var windSpeed: String?
-    var weatherDesc: String?
-    init() {
-        temperature = "0.0"
-        humidity = "0%"
-        city = "Moscow"
-        windSpeed = "0"
-        weatherDesc = "ясно"
-    }
+    var temperature : String = "0.0"
+    var humidity : String = "0%"
+    var city: String = "Moscow"
+    var windSpeed: String = "0"
+    var weatherDesc: String = "ясно"
 }
 
 
@@ -40,9 +33,10 @@ class WeatherGetter {
         let weatherRequestURL = URL(string: myWeather.addingPercentEncoding(withAllowedCharacters: .urlQueryAllowed)!)!
                 
         let dataTask = session.dataTask(with: weatherRequestURL){
-            
             (data: Data?, response: URLResponse?, error: Error?) in
             if let error = error{
+                //let weather = Weather()
+                //weatherHandler(weather, error)
                 print("Error:\n\(error)")
             } else {
                 if let data = data {
@@ -94,6 +88,7 @@ class WeatherGetter {
                         
                     } else {
                   print("Error: unable to convert json data")
+                        weatherHandler(weather, error)
                  }
                 } else {
                  print("Error: did not receive data")

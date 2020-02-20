@@ -42,9 +42,7 @@ class ViewController: UIViewController {
                                self.WeatherDesc.text = "Error"
                            }
         })
-        //let chooseCityVC = CityViewController()
-        //self.navigationController?.pushViewController(chooseCityVC, animated: true)
-        
+        self.navigationController?.setNavigationBarHidden(navigationController?.isNavigationBarHidden == false, animated: true)
     }
 
     
@@ -52,7 +50,6 @@ class ViewController: UIViewController {
         super.viewDidLoad()
         self.view.backgroundColor = UIColor(patternImage: UIImage(imageLiteralResourceName: "eberhard"))
         chooseCityButton.imageView?.contentMode = .scaleAspectFill
-        
         navigationController?.setNavigationBarHidden(true, animated: false)
         
         let weather = WeatherGetter()
