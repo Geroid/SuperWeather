@@ -7,7 +7,7 @@
         <capability name="documents saved in the Xcode 8 format" minToolsVersion="8.0"/>
     </dependencies>
     <scenes>
-        <!--View Controller-->
+        <!--aaaaaaaaa-->
         <scene sceneID="tne-QT-ifu">
             <objects>
                 <viewController hidesBottomBarWhenPushed="YES" id="BYZ-38-t0r" customClass="ViewController" customModule="SuperWeather" customModuleProvider="target" sceneMemberID="viewController">
@@ -73,7 +73,7 @@
                         <color key="backgroundColor" white="0.0" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
                         <viewLayoutGuide key="safeArea" id="6Tk-OE-BBY"/>
                     </view>
-                    <navigationItem key="navigationItem" id="WuK-wc-iXe"/>
+                    <navigationItem key="navigationItem" title="aaaaaaaaa" id="WuK-wc-iXe"/>
                     <nil key="simulatedTopBarMetrics"/>
                     <connections>
                         <outlet property="WeatherDesc" destination="rhs-aO-YqP" id="SNl-vw-6ZA"/>
@@ -82,7 +82,6 @@
                         <outlet property="humidityLabel" destination="KAF-mZ-cFc" id="141-Fh-WOe"/>
                         <outlet property="weatherLabel" destination="FvF-zB-y2R" id="O7t-at-gtk"/>
                         <outlet property="windSpeedLabel" destination="OMd-8H-CJd" id="BdT-rd-SvA"/>
-                        <segue destination="rOK-ZT-E6l" kind="show" identifier="SegueFromRootToCity" id="ou9-Yq-HdS"/>
                     </connections>
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="dkx-z0-nzr" sceneMemberID="firstResponder"/>
@@ -108,10 +107,9 @@
         <!--Navigation Controller-->
         <scene sceneID="dLD-Lf-mfk">
             <objects>
-                <navigationController hidesBarsWhenVerticallyCompact="YES" id="GeT-Po-0vF" sceneMemberID="viewController">
+                <navigationController navigationBarHidden="YES" id="GeT-Po-0vF" sceneMemberID="viewController">
                     <simulatedNavigationBarMetrics key="simulatedTopBarMetrics"/>
                     <navigationBar key="navigationBar" contentMode="scaleToFill" insetsLayoutMarginsFromSafeArea="NO" id="97g-Ue-egz">
-                        <rect key="frame" x="0.0" y="44" width="414" height="44"/>
                         <autoresizingMask key="autoresizingMask"/>
                     </navigationBar>
                     <toolbar key="toolbar" opaque="NO" clearsContextBeforeDrawing="NO" contentMode="scaleToFill" insetsLayoutMarginsFromSafeArea="NO" id="139-af-Ygz">
