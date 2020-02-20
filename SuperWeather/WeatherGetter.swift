@@ -9,6 +9,23 @@
 import Foundation
 
 
+struct Weather: Codable
+{
+    var temperature : String?
+    var humidity : String?
+    var city: String?
+    var windSpeed: String?
+    var weatherDesc: String?
+    init() {
+        temperature = "0.0"
+        humidity = "0%"
+        city = "Moscow"
+        windSpeed = "0"
+        weatherDesc = "ясно"
+    }
+}
+
+
 class WeatherGetter {
 
     private let openWeatherMapBaseURL = "http://api.openweathermap.org/data/2.5/weather"
@@ -18,13 +35,15 @@ class WeatherGetter {
         self.controller = controller
     }
     
-    func getWeather(city: String){
+    func getWeather(city: String, weatherHandler: @escaping (Weather?, Error?) -> Void){
+        
         
         let session = URLSession.shared
         let myWeather = "\(openWeatherMapBaseURL)?APPID=\(openWeatherMapKey)&lang=ru&q=\(city)&units=metric"
         let weatherRequestURL = URL(string: myWeather.addingPercentEncoding(withAllowedCharacters: .urlQueryAllowed)!)!
                 
         let dataTask = session.dataTask(with: weatherRequestURL){
+            
             (data: Data?, response: URLResponse?, error: Error?) in
             if let error = error{
                 print("Error:\n\(error)")
@@ -57,7 +76,7 @@ class WeatherGetter {
                         if let windDictionary = jsonObj.value(forKey: "wind") as? NSDictionary{
                             if let windSpeed = windDictionary.value(forKey: "speed"){
                                 DispatchQueue.main.async {
-                                   self.controller?.windSpeedLabel.text = " Скорость ветра \(windSpeed) м/с"
+                                    self.controller?.windSpeedLabel.text = " Скорость ветра \(windSpeed) м/с"
                                 }
                             }
                             
@@ -65,7 +84,7 @@ class WeatherGetter {
                         if let weatherDetails = jsonObj.value(forKey: "weather") as? Array<Any>{
                             if let weatherDesc = weatherDetails as? [[String: Any]] {
                                                        DispatchQueue.main.async {
-                                                        self.controller?.WeatherDesc.text = "\(weatherDesc[0]["description"]!)"
+                                                            self.controller?.WeatherDesc.text = "\(weatherDesc[0]["description"]!)"
                                                        }
                                                     }
                         }

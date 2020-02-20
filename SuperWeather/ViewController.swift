@@ -31,7 +31,7 @@ class ViewController: UIViewController {
 
     @IBAction func weatherButtonTapped(_ sender: UIButton) {
         let weather = WeatherGetter(controller: self)
-        weather.getWeather(city: "Таганрог")
+        //weather.getWeather(city: "Таганрог")
         //let chooseCityVC = CityViewController()
         //self.navigationController?.pushViewController(chooseCityVC, animated: true)
         
@@ -46,7 +46,15 @@ class ViewController: UIViewController {
         navigationController?.setNavigationBarHidden(true, animated: false)
         
         let weather = WeatherGetter(controller: self)
-        weather.getWeather(city: "Таганрог")
+        weather.getWeather(city: "Таганрог", weatherHandler: { weather, error in
+            if let weather = weather{
+                self.weatherLabel.text = weather.temperature
+            }
+            else {
+                self.weatherLabel.text = "Error"
+            }
+            
+        })
     }
     
     override func didReceiveMemoryWarning() {
