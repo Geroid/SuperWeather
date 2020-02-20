@@ -15,7 +15,6 @@ class ViewController: UIViewController {
     
     @IBOutlet weak var weatherLabel: UILabel!
     @IBOutlet weak var cityLabel: UILabel!
-    @IBOutlet weak var weatherDescriptionLabel: UILabel!
     @IBOutlet weak var maxTempLabel: UILabel!
     @IBOutlet weak var WeatherDesc: UILabel!
     @IBOutlet weak var chooseCityButton: UIButton!
@@ -30,8 +29,19 @@ class ViewController: UIViewController {
 
 
     @IBAction func weatherButtonTapped(_ sender: UIButton) {
-        let weather = WeatherGetter(controller: self)
-        //weather.getWeather(city: "Таганрог")
+        let weather = WeatherGetter()
+        weather.getWeather(city: "Таганрог", weatherHandler: { weather, error in
+                           if let weather = weather{
+                               self.weatherLabel.text = weather.temperature
+                               self.humidityLabel.text = weather.humidity
+                               self.cityLabel.text = weather.city
+                               self.windSpeedLabel.text = weather.windSpeed
+                               self.WeatherDesc.text = weather.weatherDesc
+                           }
+                           else {
+                               self.WeatherDesc.text = "Error"
+                           }
+        })
         //let chooseCityVC = CityViewController()
         //self.navigationController?.pushViewController(chooseCityVC, animated: true)
         
@@ -45,10 +55,14 @@ class ViewController: UIViewController {
         
         navigationController?.setNavigationBarHidden(true, animated: false)
         
-        let weather = WeatherGetter(controller: self)
+        let weather = WeatherGetter()
         weather.getWeather(city: "Таганрог", weatherHandler: { weather, error in
             if let weather = weather{
                 self.weatherLabel.text = weather.temperature
+                self.humidityLabel.text = weather.humidity
+                self.cityLabel.text = weather.city
+                self.windSpeedLabel.text = weather.windSpeed
+                self.WeatherDesc.text = weather.weatherDesc
             }
             else {
                 self.weatherLabel.text = "Error"
