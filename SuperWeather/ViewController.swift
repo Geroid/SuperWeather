@@ -21,24 +21,35 @@ class ViewController: UIViewController {
     @IBOutlet weak var windSpeedLabel: UILabel!
     @IBOutlet weak var humidityLabel: UILabel!
     
+    weak var delegate: CityViewController!
+    
+    var city: String = "Таганрог"
+    
     
     @IBAction func cityButtonTapped(_ sender: UIButton) {
         
         let myCity = self.storyboard?.instantiateViewController(withIdentifier: "CityViewController") as! CityViewController
+        myCity.cityHandler = { city in
+            self.city = city
+            self.weatherUpdate()
+        }
         self.navigationController?.pushViewController(myCity, animated: true)
     }
     
-    
-    
     @IBAction func weatherButtonTapped(_ sender: UIButton) {
+        
+    }
+    
+    
+    func weatherUpdate() {
         let weather = WeatherGetter()
-        weather.getWeather(city: "Таганрог", weatherHandler: { weather, error in
+        weather.getWeather(city: city, weatherHandler: { weather, error in
             if let weather = weather{
-                self.weatherLabel.text = String(weather.temperature)
+                self.weatherLabel.text = "\(weather.temperature)°C"
                 self.humidityLabel.text = "Влажность: \(weather.humidity)%"
                 self.cityLabel.text = weather.city
                 self.windSpeedLabel.text = "Скорость ветра: \(weather.windSpeed) м/с"
-                self.WeatherDesc.text = (weather.weatherDesc).localizedUppercase
+                self.WeatherDesc.text = (weather.weatherDesc)
             }
             else {
                 self.WeatherDesc.text = "Error"
@@ -46,26 +57,11 @@ class ViewController: UIViewController {
         })
     }
     
-    
     override func viewDidLoad() {
         super.viewDidLoad()
         self.view.backgroundColor = UIColor(patternImage: UIImage(imageLiteralResourceName: "eberhard"))
         chooseCityButton.imageView?.contentMode = .scaleAspectFill
-        
-        let weather = WeatherGetter()
-        weather.getWeather(city: "Таганрог", weatherHandler: { weather, error in
-            if let weather = weather{
-                self.weatherLabel.text = String(weather.temperature)
-                self.humidityLabel.text = "Влажность: \(weather.humidity)%"
-                self.cityLabel.text = weather.city
-                self.windSpeedLabel.text = "Скорость ветра \(weather.windSpeed) м/с"
-                self.WeatherDesc.text = weather.weatherDesc
-            }
-            else {
-                self.weatherLabel.text = "Error"
-            }
-            
-        })
+        weatherUpdate()
     }
     
     override func didReceiveMemoryWarning() {

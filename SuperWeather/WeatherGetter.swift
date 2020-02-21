@@ -44,8 +44,8 @@ class WeatherGetter {
                 return
             }
             
-            let dataString = String(data: data, encoding: String.Encoding.utf8)
-            print("All the weather data:\n\(dataString!)")
+//            let dataString = String(data: data, encoding: String.Encoding.utf8)
+//            print("All the weather data:\n\(dataString!)")
             var weather = Weather()
             
             guard let jsonObj = try? JSONSerialization.jsonObject(with: data, options: .allowFragments)
