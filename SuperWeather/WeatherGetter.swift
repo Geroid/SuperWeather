@@ -11,10 +11,10 @@ import Foundation
 
 struct Weather: Codable
 {
-    var temperature : String = "0.0"
-    var humidity : String = "0%"
+    var temperature : Double = 0.0
+    var humidity : Int = 0
     var city: String = "Moscow"
-    var windSpeed: String = "0"
+    var windSpeed: Double = 0.0
     var weatherDesc: String = "ясно"
 }
 
@@ -35,8 +35,6 @@ class WeatherGetter {
         let dataTask = session.dataTask(with: weatherRequestURL){
             (data: Data?, response: URLResponse?, error: Error?) in
             if let error = error{
-                //let weather = Weather()
-                //weatherHandler(weather, error)
                 print("Error:\n\(error)")
                 return
             }
@@ -50,64 +48,56 @@ class WeatherGetter {
             print("All the weather data:\n\(dataString!)")
             var weather = Weather()
             
-            guard let jsonOb = try? JSONSerialization.jsonObject(with: data, options: .allowFragments)
+            guard let jsonObj = try? JSONSerialization.jsonObject(with: data, options: .allowFragments)
                 as? Dictionary<String, Any> else {
                     print("Error: unable to convert json data")
                     weatherHandler(weather, error)
                     return
             }
             
-            guard let jsonObj = try? JSONSerialization.jsonObject(with: data, options: .allowFragments)
-                as? NSDictionary else {
-                    print("Error: unable to convert json data")
-                    weatherHandler(weather, error)
-                    return
+            guard let mainDictionary = jsonObj["main"] as? [String:Any] else {
+                return
             }
             
-            
-            if let mainDictionary = jsonObj.value(forKey: "main") as? NSDictionary{
-                if let temperature = mainDictionary.value(forKey: "temp") as? Double{
-                    DispatchQueue.main.async {
-                        weather.temperature = "\(temperature)°C"
-                        weatherHandler(weather, error)
-                    }
-                }
-                if let humidity = mainDictionary.value(forKey: "humidity") as? Int{
-                    DispatchQueue.main.async {
-                        weather.humidity = "Влажность: \(humidity)%"
-                        weatherHandler(weather, error)
-                    }
-                }
-                
-            } else {
-                print("Error: unable to find temperature in dictionary")
-            }
-            (jsonObj["name"] as? [String: Any])
-            if let town = jsonObj.value(forKey: "name") as? String{
-                DispatchQueue.main.async {
-                    weather.city = "\(town)"
-                    weatherHandler(weather, error)
-                }
-            }
-            if let windDictionary = jsonObj.value(forKey: "wind") as? NSDictionary{
-                if let windSpeed = windDictionary.value(forKey: "speed"){
-                    DispatchQueue.main.async {
-                        weather.windSpeed = "Скорость ветра \(windSpeed) м/с"
-                        weatherHandler(weather,error)
-                    }
-                }
-                
-            }
-            //var name = jsonObj["weather"][0]["description"] as? [String:Any]
-            if let weatherDetails = jsonObj.value(forKey: "weather") as? Array<Any>{
-                if let weatherDesc = weatherDetails as? [[String: Any]] {
-                    DispatchQueue.main.async {
-                        weather.weatherDesc = "\(weatherDesc[0]["description"]!)"
-                        weatherHandler(weather, error)
-                    }
-                }
+            guard let temperature = mainDictionary["temp"] as? Double else {
+                return
             }
             
+            weather.temperature = temperature
+            
+            guard let hum = mainDictionary["humidity"] as? Int else {
+                return
+            }
+            
+            weather.humidity = hum
+            
+            guard let city = jsonObj["name"] as? String else {
+                return
+            }
+            weather.city = city
+            
+            guard let windDictionary = jsonObj["wind"] as? [String: Any] else {
+                return
+            }
+            
+            guard let windSpeed = windDictionary["speed"] as? Double else {
+                return
+            }
+            weather.windSpeed = windSpeed
+            
+            guard let weatherDetails = jsonObj["weather"] as? [[String: Any]] else {
+                return
+            }
+            
+            guard let weatherDescription = weatherDetails[0]["description"] as? String else {
+                return
+            }
+            
+            weather.weatherDesc = weatherDescription
+            
+            DispatchQueue.main.async {
+                weatherHandler(weather, error)
+            }
         }
         dataTask.resume()
     }

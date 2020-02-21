@@ -25,29 +25,27 @@ class ViewController: UIViewController {
     @IBAction func cityButtonTapped(_ sender: UIButton) {
         
         let myCity = self.storyboard?.instantiateViewController(withIdentifier: "CityViewController") as! CityViewController
-        //let cityViewController: CityViewController = CityViewController.init()
         self.navigationController?.pushViewController(myCity, animated: true)
     }
     
-
-
+    
+    
     @IBAction func weatherButtonTapped(_ sender: UIButton) {
         let weather = WeatherGetter()
         weather.getWeather(city: "Таганрог", weatherHandler: { weather, error in
-                           if let weather = weather{
-                               self.weatherLabel.text = weather.temperature
-                               self.humidityLabel.text = weather.humidity
-                               self.cityLabel.text = weather.city
-                               self.windSpeedLabel.text = weather.windSpeed
-                               self.WeatherDesc.text = weather.weatherDesc
-                           }
-                           else {
-                               self.WeatherDesc.text = "Error"
-                           }
+            if let weather = weather{
+                self.weatherLabel.text = String(weather.temperature)
+                self.humidityLabel.text = "Влажность: \(weather.humidity)%"
+                self.cityLabel.text = weather.city
+                self.windSpeedLabel.text = "Скорость ветра: \(weather.windSpeed) м/с"
+                self.WeatherDesc.text = (weather.weatherDesc).localizedUppercase
+            }
+            else {
+                self.WeatherDesc.text = "Error"
+            }
         })
-//        self.navigationController?.setNavigationBarHidden(navigationController?.isNavigationBarHidden == false, animated: true)
     }
-
+    
     
     override func viewDidLoad() {
         super.viewDidLoad()
@@ -57,10 +55,10 @@ class ViewController: UIViewController {
         let weather = WeatherGetter()
         weather.getWeather(city: "Таганрог", weatherHandler: { weather, error in
             if let weather = weather{
-                self.weatherLabel.text = weather.temperature
-                self.humidityLabel.text = weather.humidity
+                self.weatherLabel.text = String(weather.temperature)
+                self.humidityLabel.text = "Влажность: \(weather.humidity)%"
                 self.cityLabel.text = weather.city
-                self.windSpeedLabel.text = weather.windSpeed
+                self.windSpeedLabel.text = "Скорость ветра \(weather.windSpeed) м/с"
                 self.WeatherDesc.text = weather.weatherDesc
             }
             else {
@@ -73,7 +71,7 @@ class ViewController: UIViewController {
     override func didReceiveMemoryWarning() {
         super.didReceiveMemoryWarning()
     }
-
-
+    
+    
 }
 
