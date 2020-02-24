@@ -1,5 +1,5 @@
 <?xml version="1.0" encoding="UTF-8"?>
-<document type="com.apple.InterfaceBuilder3.CocoaTouch.Storyboard.XIB" version="3.0" toolsVersion="15705" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES" useTraitCollections="YES" useSafeAreas="YES" colorMatched="YES" initialViewController="GeT-Po-0vF">
+<document type="com.apple.InterfaceBuilder3.CocoaTouch.Storyboard.XIB" version="3.0" toolsVersion="15705" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES" useTraitCollections="YES" useSafeAreas="YES" colorMatched="YES" initialViewController="LVe-yk-8yE">
     <device id="retina6_1" orientation="portrait" appearance="light"/>
     <dependencies>
         <plugIn identifier="com.apple.InterfaceBuilder.IBCocoaTouchPlugin" version="15706"/>
@@ -10,7 +10,7 @@
         <!--View Controller-->
         <scene sceneID="tne-QT-ifu">
             <objects>
-                <viewController storyboardIdentifier="mainScreen" hidesBottomBarWhenPushed="YES" id="BYZ-38-t0r" customClass="ViewController" customModule="SuperWeather" customModuleProvider="target" sceneMemberID="viewController">
+                <viewController storyboardIdentifier="ViewController" hidesBottomBarWhenPushed="YES" id="BYZ-38-t0r" customClass="ViewController" customModule="SuperWeather" customModuleProvider="target" sceneMemberID="viewController">
                     <view key="view" contentMode="scaleAspectFill" id="8bC-Xf-vdC">
                         <rect key="frame" x="0.0" y="0.0" width="414" height="896"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
@@ -20,6 +20,7 @@
                                 <constraints>
                                     <constraint firstAttribute="height" constant="50" id="yYS-dE-EiJ"/>
                                 </constraints>
+                                <fontDescription key="fontDescription" type="system" weight="medium" pointSize="20"/>
                                 <state key="normal" title="Обновить погоду">
                                     <color key="titleColor" red="0.99999600649999998" green="1" blue="1" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
                                 </state>
@@ -35,24 +36,24 @@
                                         <subviews>
                                             <label opaque="NO" userInteractionEnabled="NO" contentMode="scaleAspectFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="City" textAlignment="center" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" minimumFontSize="30" translatesAutoresizingMaskIntoConstraints="NO" id="I5I-8g-pYf">
                                                 <rect key="frame" x="20" y="20" width="358" height="44.5"/>
-                                                <fontDescription key="fontDescription" type="system" pointSize="37"/>
+                                                <fontDescription key="fontDescription" type="system" weight="medium" pointSize="37"/>
                                                 <color key="textColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
                                                 <nil key="highlightedColor"/>
                                             </label>
                                             <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="WindSpeed" textAlignment="center" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" minimumFontSize="20" translatesAutoresizingMaskIntoConstraints="NO" id="OMd-8H-CJd">
-                                                <rect key="frame" x="20" y="295.5" width="358" height="30"/>
+                                                <rect key="frame" x="20" y="275.5" width="358" height="30"/>
                                                 <fontDescription key="fontDescription" type="system" pointSize="25"/>
                                                 <color key="textColor" red="0.99999600649999998" green="1" blue="1" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
                                                 <nil key="highlightedColor"/>
                                             </label>
                                             <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Humidity" textAlignment="center" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="KAF-mZ-cFc">
-                                                <rect key="frame" x="20" y="235.5" width="358" height="30"/>
+                                                <rect key="frame" x="20" y="215.5" width="358" height="30"/>
                                                 <fontDescription key="fontDescription" type="system" pointSize="25"/>
                                                 <color key="textColor" red="0.99999600649999998" green="1" blue="1" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
                                                 <nil key="highlightedColor"/>
                                             </label>
                                             <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="WeatherDesc" textAlignment="center" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" minimumFontSize="18" translatesAutoresizingMaskIntoConstraints="NO" id="rhs-aO-YqP">
-                                                <rect key="frame" x="20" y="181.5" width="358" height="24"/>
+                                                <rect key="frame" x="20" y="161.5" width="358" height="24"/>
                                                 <fontDescription key="fontDescription" type="system" pointSize="20"/>
                                                 <color key="textColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
                                                 <nil key="highlightedColor"/>
@@ -70,7 +71,7 @@
                                             <constraint firstItem="OMd-8H-CJd" firstAttribute="leading" secondItem="D6f-g9-DLd" secondAttribute="leading" constant="20" id="4Li-rx-Vs1"/>
                                             <constraint firstAttribute="trailing" secondItem="KAF-mZ-cFc" secondAttribute="trailing" constant="20" id="88Z-Tg-aaS"/>
                                             <constraint firstItem="FvF-zB-y2R" firstAttribute="top" secondItem="I5I-8g-pYf" secondAttribute="bottom" constant="30" id="INP-dl-HfB"/>
-                                            <constraint firstItem="rhs-aO-YqP" firstAttribute="top" secondItem="FvF-zB-y2R" secondAttribute="bottom" constant="40" id="Ioa-0l-xYY"/>
+                                            <constraint firstItem="rhs-aO-YqP" firstAttribute="top" secondItem="FvF-zB-y2R" secondAttribute="bottom" constant="20" id="Ioa-0l-xYY"/>
                                             <constraint firstAttribute="trailing" secondItem="rhs-aO-YqP" secondAttribute="trailing" constant="20" id="LPj-2v-Jb0"/>
                                             <constraint firstItem="KAF-mZ-cFc" firstAttribute="top" secondItem="rhs-aO-YqP" secondAttribute="bottom" constant="30" id="Q0X-Z1-C6k"/>
                                             <constraint firstItem="FvF-zB-y2R" firstAttribute="leading" secondItem="D6f-g9-DLd" secondAttribute="leading" constant="20" id="URB-r1-FgG"/>
@@ -179,10 +180,59 @@
             </objects>
             <point key="canvasLocation" x="1960.8695652173915" y="819.64285714285711"/>
         </scene>
+        <!--Launch View Controller-->
+        <scene sceneID="8DK-Zh-jIM">
+            <objects>
+                <viewController modalPresentationStyle="fullScreen" id="LVe-yk-8yE" customClass="LaunchViewController" customModule="SuperWeather" customModuleProvider="target" sceneMemberID="viewController">
+                    <connections>
+                        <segue destination="a8e-RD-gmI" kind="show" identifier="NetworkUnavailable" id="czd-Nl-Ol9"/>
+                        <segue destination="GeT-Po-0vF" kind="show" identifier="mainScreen" id="yEX-bu-nXc"/>
+                    </connections>
+                </viewController>
+                <placeholder placeholderIdentifier="IBFirstResponder" id="TEG-Lc-0jQ" userLabel="First Responder" customClass="UIResponder" sceneMemberID="firstResponder"/>
+            </objects>
+            <point key="canvasLocation" x="-922" y="406"/>
+        </scene>
+        <!--Offline View Controller-->
+        <scene sceneID="eCD-Hk-Yga">
+            <objects>
+                <viewController storyboardIdentifier="OfflineViewController" modalPresentationStyle="fullScreen" id="a8e-RD-gmI" customClass="OfflineViewController" customModule="SuperWeather" customModuleProvider="target" sceneMemberID="viewController">
+                    <view key="view" contentMode="scaleToFill" id="kOT-oT-wT2">
+                        <rect key="frame" x="0.0" y="0.0" width="414" height="896"/>
+                        <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
+                        <subviews>
+                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="No Internet connection" textAlignment="center" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="D7T-Dv-xBm">
+                                <rect key="frame" x="77.5" y="433" width="259.5" height="30"/>
+                                <fontDescription key="fontDescription" type="system" weight="semibold" pointSize="25"/>
+                                <nil key="textColor"/>
+                                <nil key="highlightedColor"/>
+                            </label>
+                            <imageView clipsSubviews="YES" userInteractionEnabled="NO" contentMode="scaleAspectFit" horizontalHuggingPriority="251" verticalHuggingPriority="251" image="Wifi Off" translatesAutoresizingMaskIntoConstraints="NO" id="0mn-5F-sVC">
+                                <rect key="frame" x="143" y="284" width="128" height="128"/>
+                            </imageView>
+                        </subviews>
+                        <color key="backgroundColor" systemColor="systemBackgroundColor" cocoaTouchSystemColor="whiteColor"/>
+                        <constraints>
+                            <constraint firstItem="D7T-Dv-xBm" firstAttribute="centerY" secondItem="kOT-oT-wT2" secondAttribute="centerY" id="D5i-mM-aiN"/>
+                            <constraint firstItem="D7T-Dv-xBm" firstAttribute="centerX" secondItem="kOT-oT-wT2" secondAttribute="centerX" id="RxA-al-2Ym"/>
+                            <constraint firstItem="0mn-5F-sVC" firstAttribute="centerY" secondItem="kOT-oT-wT2" secondAttribute="centerY" constant="-100" id="by5-dK-x6l"/>
+                            <constraint firstItem="0mn-5F-sVC" firstAttribute="centerX" secondItem="kOT-oT-wT2" secondAttribute="centerX" id="dd3-EI-YI6"/>
+                        </constraints>
+                        <viewLayoutGuide key="safeArea" id="DMU-f1-Hue"/>
+                    </view>
+                    <connections>
+                        <segue destination="GeT-Po-0vF" kind="show" identifier="mainScreen" id="DCF-Cj-dvN"/>
+                    </connections>
+                </viewController>
+                <placeholder placeholderIdentifier="IBFirstResponder" id="iMQ-6k-kOA" userLabel="First Responder" customClass="UIResponder" sceneMemberID="firstResponder"/>
+            </objects>
+            <point key="canvasLocation" x="257.97101449275362" y="123.88392857142857"/>
+        </scene>
         <!--Navigation Controller-->
         <scene sceneID="dLD-Lf-mfk">
             <objects>
-                <navigationController navigationBarHidden="YES" id="GeT-Po-0vF" sceneMemberID="viewController">
+                <navigationController modalPresentationStyle="fullScreen" navigationBarHidden="YES" id="GeT-Po-0vF" sceneMemberID="viewController">
+                    <navigationItem key="navigationItem" id="E87-yX-2Ac"/>
                     <simulatedNavigationBarMetrics key="simulatedTopBarMetrics"/>
                     <navigationBar key="navigationBar" contentMode="scaleToFill" insetsLayoutMarginsFromSafeArea="NO" id="97g-Ue-egz">
                         <autoresizingMask key="autoresizingMask"/>
@@ -200,6 +250,10 @@
         </scene>
     </scenes>
     <resources>
+        <image name="Wifi Off" width="128" height="128"/>
         <image name="icons-town" width="25" height="25"/>
     </resources>
+    <inferredMetricsTieBreakers>
+        <segue reference="yEX-bu-nXc"/>
+    </inferredMetricsTieBreakers>
 </document>

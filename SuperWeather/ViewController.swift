@@ -25,6 +25,9 @@ class ViewController: UIViewController {
     
     var city: String = "Таганрог"
     
+//    var reachability = ReachabilityHandler()
+    let network = NetworkManager.sharedInstance
+    
     
     @IBAction func cityButtonTapped(_ sender: UIButton) {
         
@@ -42,6 +45,11 @@ class ViewController: UIViewController {
     
     
     func weatherUpdate() {
+        
+        network.reachability.whenUnreachable = { reachability in
+            self.showOfflinePage()
+        }
+        
         let weather = WeatherGetter()
         weather.getWeather(city: city, weatherHandler: { weather, error in
             if let weather = weather{
@@ -62,7 +70,19 @@ class ViewController: UIViewController {
         self.view.backgroundColor = UIColor(patternImage: UIImage(imageLiteralResourceName: "eberhard"))
         chooseCityButton.imageView?.contentMode = .scaleAspectFill
         weatherUpdate()
+        
+        network.reachability.whenUnreachable = { reachability in
+            self.showOfflinePage()
+        }
+        
     }
+    private func showOfflinePage() -> Void {
+        let offlineScreen = self.storyboard?.instantiateViewController(withIdentifier: "OfflineViewController") as! OfflineViewController
+           DispatchQueue.main.async {
+            self.navigationController?.pushViewController(offlineScreen, animated: true)
+           }
+       }
+    
     
     override func didReceiveMemoryWarning() {
         super.didReceiveMemoryWarning()

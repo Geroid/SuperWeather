@@ -13,19 +13,21 @@ class NetworkManager : NSObject {
     var reachability: Reachability!
     
     static let sharedInstance: NetworkManager = {
-      return NetworkManager()
+        return NetworkManager()
     } ()
     override init() {
         super.init()
-        //reachability = Reachability()!
+        
+        reachability = try! Reachability()
+        
         NotificationCenter.default.addObserver(self, selector: #selector(networkStatusChanged(_:)), name: .reachabilityChanged, object: reachability)
         do {
             try reachability.startNotifier()
         } catch
-            {
-                print("Unnable to start notifier")
-                
-            }
+        {
+            print("Unnable to start notifier")
+            
+        }
     }
     
     @objc func networkStatusChanged(_ notification: Notification) {
@@ -42,13 +44,13 @@ class NetworkManager : NSObject {
     }
     
     static func isReachable(completed: @escaping (NetworkManager) -> Void) {
-        if (NetworkManager.sharedInstance.reachability).connection != .none {
+        if (NetworkManager.sharedInstance.reachability).connection != .unavailable {
             completed(NetworkManager.sharedInstance)
         }
     }
     
     static func isUnreacheble(completed: @escaping (NetworkManager) -> Void) {
-        if (NetworkManager.sharedInstance.reachability).connection == .none {
+        if (NetworkManager.sharedInstance.reachability).connection == .unavailable {
             completed(NetworkManager.sharedInstance)
         }
     }
