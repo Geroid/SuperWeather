@@ -37,7 +37,7 @@ class ViewController: UIViewController {
     }
     
     @IBAction func weatherButtonTapped(_ sender: UIButton) {
-        
+        weatherUpdate()
     }
     
     

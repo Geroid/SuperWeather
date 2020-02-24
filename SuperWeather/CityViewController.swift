@@ -30,7 +30,7 @@ class CityViewController: UIViewController, UITableViewDelegate, UITableViewData
     
     override func viewDidLoad() {
         super.viewDidLoad()
-        self.navigationItem.title = "City"
+        self.navigationItem.title = "Выберите город"
         cityTableView.delegate = self as? UITableViewDelegate
         cityTableView.dataSource = self as? UITableViewDataSource
         let mainViewController = ViewController()
@@ -54,7 +54,7 @@ class CityViewController: UIViewController, UITableViewDelegate, UITableViewData
         return cell
     }
     
-        
+    
     let appDelegate = UIApplication.shared.delegate as! AppDelegate
     
     // MARK:  UITableViewDelegate Methods
