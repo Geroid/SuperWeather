@@ -55,20 +55,15 @@ class WeatherGetter {
                     return
             }
             
-            guard let mainDictionary = jsonObj["main"] as? [String:Any] else {
-                return
-            }
-            
-            guard let temperature = mainDictionary["temp"] as? Double else {
-                return
-            }
+            guard
+                let mainDictionary = jsonObj["main"] as? [String:Any],
+                let temperature = mainDictionary["temp"] as? Double,
+                let hum = mainDictionary["humidity"] as? Int
+                else {
+                    return
+                }
             
             weather.temperature = temperature
-            
-            guard let hum = mainDictionary["humidity"] as? Int else {
-                return
-            }
-            
             weather.humidity = hum
             
             guard let city = jsonObj["name"] as? String else {
@@ -76,23 +71,22 @@ class WeatherGetter {
             }
             weather.city = city
             
-            guard let windDictionary = jsonObj["wind"] as? [String: Any] else {
-                return
-            }
-            
-            guard let windSpeed = windDictionary["speed"] as? Double else {
-                return
-            }
+            guard
+                let windDictionary = jsonObj["wind"] as? [String: Any],
+                let windSpeed = windDictionary["speed"] as? Double
+                else {
+                    return
+                }
+
             weather.windSpeed = windSpeed
             
-            guard let weatherDetails = jsonObj["weather"] as? [[String: Any]] else {
-                return
-            }
-            
-            guard let weatherDescription = weatherDetails[0]["description"] as? String else {
-                return
-            }
-            
+            guard
+                let weatherDetails = jsonObj["weather"] as? [[String: Any]],
+                let weatherDescription = weatherDetails[0]["description"] as? String
+                else {
+                    return
+                }
+
             weather.weatherDesc = weatherDescription
             
             DispatchQueue.main.async {
