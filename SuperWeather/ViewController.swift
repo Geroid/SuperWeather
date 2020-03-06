@@ -8,6 +8,30 @@
 
 import UIKit
 
+//enum weatherState: String {
+//    case clouds = "облачно"
+//    case rain = "дождь"
+//    case snow = "снег"
+//    case clear = "ясно"
+//    case unknown
+//
+//    init(value: String) {
+//        switch value {
+//        case "облачно": self = .clouds
+//        case "дождь": self = .rain
+//        case "снег": self = .snow
+//        case "ясно": self = .clear
+//        default: self = .unknown
+//        }
+//    }
+//}
+
+extension UIViewController {
+    func changeBackgroud(weatherDescription: String) {
+        view.backgroundColor = UIColor(patternImage: UIImage(imageLiteralResourceName: "photo"))
+    }
+}
+
 class ViewController: UIViewController {
     
     private let openWeatherMapBaseURL = "http://api.openweathermap.org/data/2.5/weather"
@@ -25,7 +49,7 @@ class ViewController: UIViewController {
     
     var city: String = "Таганрог"
     
-//    var reachability = ReachabilityHandler()
+    //    var reachability = ReachabilityHandler()
     let network = NetworkManager.sharedInstance
     
     
@@ -41,6 +65,7 @@ class ViewController: UIViewController {
     
     @IBAction func weatherButtonTapped(_ sender: UIButton) {
         weatherUpdate()
+        changeBackgroud(weatherDescription: "")
     }
     
     
@@ -65,6 +90,7 @@ class ViewController: UIViewController {
         })
     }
     
+    
     override func viewDidLoad() {
         super.viewDidLoad()
         self.view.backgroundColor = UIColor(patternImage: UIImage(imageLiteralResourceName: "eberhard"))
@@ -78,10 +104,10 @@ class ViewController: UIViewController {
     }
     private func showOfflinePage() -> Void {
         let offlineScreen = self.storyboard?.instantiateViewController(withIdentifier: "OfflineViewController") as! OfflineViewController
-           DispatchQueue.main.async {
+        DispatchQueue.main.async {
             self.navigationController?.pushViewController(offlineScreen, animated: true)
-           }
-       }
+        }
+    }
     
     
     override func didReceiveMemoryWarning() {

@@ -54,11 +54,5 @@ class NetworkManager : NSObject {
             completed(NetworkManager.sharedInstance)
         }
     }
-    // Network is reachable via WiFi
-    static func isReachableViaWiFi(completed: @escaping (NetworkManager) -> Void) {
-        if (NetworkManager.sharedInstance.reachability).connection == .wifi {            completed(NetworkManager.sharedInstance)
-            
-        }
-    }
     
 }

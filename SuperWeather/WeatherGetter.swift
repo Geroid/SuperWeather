@@ -9,13 +9,17 @@
 import Foundation
 
 
-struct Weather: Codable
-{
-    var temperature : Double = 0.0
-    var humidity : Int = 0
-    var city: String = "Moscow"
-    var windSpeed: Double = 0.0
-    var weatherDesc: String = "ясно"
+struct Weather: Codable {
+    var temperature : Double
+    var humidity : Int
+    var city: String
+    var windSpeed: Double
+    var weatherDesc: String
+}
+
+enum ErrorJSON : Error {
+    case invalidData
+    case urlFail
 }
 
 
@@ -26,7 +30,7 @@ class WeatherGetter {
     init(){
     }
     
-    func getWeather(city: String, weatherHandler: @escaping (Weather?, Error?) -> Void){
+    func getWeather(city: String, weatherHandler: @escaping (Weather?, Error?) -> Void) {
         
         let session = URLSession.shared
         let myWeather = "\(openWeatherMapBaseURL)?APPID=\(openWeatherMapKey)&lang=ru&q=\(city)&units=metric"
@@ -36,6 +40,7 @@ class WeatherGetter {
             (data: Data?, response: URLResponse?, error: Error?) in
             if let error = error{
                 print("Error:\n\(error)")
+                weatherHandler(nil, error)
                 return
             }
             
@@ -46,48 +51,33 @@ class WeatherGetter {
             
             //            let dataString = String(data: data, encoding: String.Encoding.utf8)
             //            print("All the weather data:\n\(dataString!)")
-            var weather = Weather()
             
             guard let jsonObj = try? JSONSerialization.jsonObject(with: data, options: .allowFragments)
                 as? Dictionary<String, Any> else {
                     print("Error: unable to convert json data")
-                    weatherHandler(weather, error)
+                    weatherHandler(nil, error)
                     return
             }
             
             guard
                 let mainDictionary = jsonObj["main"] as? [String:Any],
                 let temperature = mainDictionary["temp"] as? Double,
-                let hum = mainDictionary["humidity"] as? Int
-                else {
-                    return
-                }
-            
-            weather.temperature = temperature
-            weather.humidity = hum
-            
-            guard let city = jsonObj["name"] as? String else {
-                return
-            }
-            weather.city = city
-            
-            guard
+                let hum = mainDictionary["humidity"] as? Int,
+                let city = jsonObj["name"] as? String,
                 let windDictionary = jsonObj["wind"] as? [String: Any],
-                let windSpeed = windDictionary["speed"] as? Double
-                else {
-                    return
-                }
-
-            weather.windSpeed = windSpeed
-            
-            guard
+                let windSpeed = windDictionary["speed"] as? Double,
                 let weatherDetails = jsonObj["weather"] as? [[String: Any]],
                 let weatherDescription = weatherDetails[0]["description"] as? String
                 else {
-                    return
-                }
-
-            weather.weatherDesc = weatherDescription
+                    return 
+            }
+            
+            let weather = Weather(
+                temperature: temperature,
+                humidity: hum,
+                city: city,
+                windSpeed: windSpeed,
+                weatherDesc: weatherDescription)
             
             DispatchQueue.main.async {
                 weatherHandler(weather, error)
