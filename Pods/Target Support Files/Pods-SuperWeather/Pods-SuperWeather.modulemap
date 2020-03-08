@@ -1,4 +1,4 @@
-framework module Pods_SuperWeather {
+module Pods_SuperWeather {
   umbrella header "Pods-SuperWeather-umbrella.h"
 
   export *

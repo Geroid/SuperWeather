@@ -8,23 +8,23 @@
 
 import UIKit
 
-//enum weatherState: String {
-//    case clouds = "облачно"
-//    case rain = "дождь"
-//    case snow = "снег"
-//    case clear = "ясно"
-//    case unknown
-//
-//    init(value: String) {
-//        switch value {
-//        case "облачно": self = .clouds
-//        case "дождь": self = .rain
-//        case "снег": self = .snow
-//        case "ясно": self = .clear
-//        default: self = .unknown
-//        }
-//    }
-//}
+enum weatherState: String {
+    case clouds
+    case rain
+    case snow
+    case clear
+    case unknown
+
+    init(value: String) {
+        switch value {
+        case "облачно": self = .clouds
+        case "дождь": self = .rain
+        case "снег": self = .snow
+        case "ясно": self = .clear
+        default: self = .unknown
+        }
+    }
+}
 
 extension UIViewController {
     func changeBackgroud(weatherDescription: String) {

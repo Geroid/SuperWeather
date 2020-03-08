@@ -7,8 +7,8 @@
 	objects = {
 
 /* Begin PBXBuildFile section */
-		AB148CF22405528800B0C1EA /* Pods_SuperWeather.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 1ECB4B9C43DF6EC5B1FE9DEC /* Pods_SuperWeather.framework */; };
-		AB148CF32405528800B0C1EA /* Pods_SuperWeather.framework in Embed Frameworks */ = {isa = PBXBuildFile; fileRef = 1ECB4B9C43DF6EC5B1FE9DEC /* Pods_SuperWeather.framework */; settings = {ATTRIBUTES = (CodeSignOnCopy, RemoveHeadersOnCopy, ); }; };
+		18D869E8C118ED28A98E2847 /* libPods-SuperWeather.a in Frameworks */ = {isa = PBXBuildFile; fileRef = 0342AC2A9168CA4703F70E95 /* libPods-SuperWeather.a */; };
+		AB148CF32405528800B0C1EA /* BuildFile in Embed Frameworks */ = {isa = PBXBuildFile; settings = {ATTRIBUTES = (CodeSignOnCopy, RemoveHeadersOnCopy, ); }; };
 		AB1F481823E8C85900676A30 /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = AB1F481723E8C85900676A30 /* AppDelegate.swift */; };
 		AB1F481A23E8C85900676A30 /* SceneDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = AB1F481923E8C85900676A30 /* SceneDelegate.swift */; };
 		AB1F481C23E8C85900676A30 /* ViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = AB1F481B23E8C85900676A30 /* ViewController.swift */; };
@@ -21,6 +21,7 @@
 		AB5A565124040FE30000C25B /* LaunchViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = AB5A565024040FE30000C25B /* LaunchViewController.swift */; };
 		AB5A5653240413160000C25B /* OfflineViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = AB5A5652240413160000C25B /* OfflineViewController.swift */; };
 		ABF1A11023FEA40D0016CC53 /* NetworkManager.swift in Sources */ = {isa = PBXBuildFile; fileRef = ABF1A10F23FEA40D0016CC53 /* NetworkManager.swift */; };
+		E789474F2412C3DD00426614 /* BuildFile in CopyFiles */ = {isa = PBXBuildFile; settings = {ATTRIBUTES = (CodeSignOnCopy, RemoveHeadersOnCopy, ); }; };
 /* End PBXBuildFile section */
 
 /* Begin PBXCopyFilesBuildPhase section */
@@ -30,16 +31,26 @@
 			dstPath = "";
 			dstSubfolderSpec = 10;
 			files = (
-				AB148CF32405528800B0C1EA /* Pods_SuperWeather.framework in Embed Frameworks */,
+				AB148CF32405528800B0C1EA /* BuildFile in Embed Frameworks */,
 			);
 			name = "Embed Frameworks";
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+		E789474E2412C3A600426614 /* CopyFiles */ = {
+			isa = PBXCopyFilesBuildPhase;
+			buildActionMask = 2147483647;
+			dstPath = "";
+			dstSubfolderSpec = 7;
+			files = (
+				E789474F2412C3DD00426614 /* BuildFile in CopyFiles */,
+			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
 /* End PBXCopyFilesBuildPhase section */
 
 /* Begin PBXFileReference section */
-		1ECB4B9C43DF6EC5B1FE9DEC /* Pods_SuperWeather.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; path = Pods_SuperWeather.framework; sourceTree = BUILT_PRODUCTS_DIR; };
-		42847AD44360B00B24250B68 /* Pods-SuperWeather.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-SuperWeather.debug.xcconfig"; path = "Target Support Files/Pods-SuperWeather/Pods-SuperWeather.debug.xcconfig"; sourceTree = "<group>"; };
+		0342AC2A9168CA4703F70E95 /* libPods-SuperWeather.a */ = {isa = PBXFileReference; explicitFileType = archive.ar; includeInIndex = 0; path = "libPods-SuperWeather.a"; sourceTree = BUILT_PRODUCTS_DIR; };
+		4FB72CC4925A21C93733A3CB /* Pods-SuperWeather.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-SuperWeather.debug.xcconfig"; path = "Target Support Files/Pods-SuperWeather/Pods-SuperWeather.debug.xcconfig"; sourceTree = "<group>"; };
 		AB1F481423E8C85900676A30 /* SuperWeather.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = SuperWeather.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		AB1F481723E8C85900676A30 /* AppDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppDelegate.swift; sourceTree = "<group>"; };
 		AB1F481923E8C85900676A30 /* SceneDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SceneDelegate.swift; sourceTree = "<group>"; };
@@ -54,7 +65,7 @@
 		AB5A565024040FE30000C25B /* LaunchViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = LaunchViewController.swift; sourceTree = "<group>"; };
 		AB5A5652240413160000C25B /* OfflineViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = OfflineViewController.swift; sourceTree = "<group>"; };
 		ABF1A10F23FEA40D0016CC53 /* NetworkManager.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = NetworkManager.swift; sourceTree = "<group>"; };
-		ED1EABA44CD013AD87115271 /* Pods-SuperWeather.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-SuperWeather.release.xcconfig"; path = "Target Support Files/Pods-SuperWeather/Pods-SuperWeather.release.xcconfig"; sourceTree = "<group>"; };
+		D482AC87D68D5A4A0D48EDE2 /* Pods-SuperWeather.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-SuperWeather.release.xcconfig"; path = "Target Support Files/Pods-SuperWeather/Pods-SuperWeather.release.xcconfig"; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -62,28 +73,28 @@
 			isa = PBXFrameworksBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
-				AB148CF22405528800B0C1EA /* Pods_SuperWeather.framework in Frameworks */,
+				18D869E8C118ED28A98E2847 /* libPods-SuperWeather.a in Frameworks */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
 /* End PBXFrameworksBuildPhase section */
 
 /* Begin PBXGroup section */
+		37C102F5A477F8686E5E2FE5 /* Frameworks */ = {
+			isa = PBXGroup;
+			children = (
+				0342AC2A9168CA4703F70E95 /* libPods-SuperWeather.a */,
+			);
+			name = Frameworks;
+			sourceTree = "<group>";
+		};
 		99C3E44F396EDB78C1D841CC /* Pods */ = {
 			isa = PBXGroup;
 			children = (
-				42847AD44360B00B24250B68 /* Pods-SuperWeather.debug.xcconfig */,
-				ED1EABA44CD013AD87115271 /* Pods-SuperWeather.release.xcconfig */,
+				4FB72CC4925A21C93733A3CB /* Pods-SuperWeather.debug.xcconfig */,
+				D482AC87D68D5A4A0D48EDE2 /* Pods-SuperWeather.release.xcconfig */,
 			);
 			path = Pods;
-			sourceTree = "<group>";
-		};
-		A648265FF3433958EF4F59C6 /* Frameworks */ = {
-			isa = PBXGroup;
-			children = (
-				1ECB4B9C43DF6EC5B1FE9DEC /* Pods_SuperWeather.framework */,
-			);
-			name = Frameworks;
 			sourceTree = "<group>";
 		};
 		AB1F480B23E8C85900676A30 = {
@@ -92,7 +103,7 @@
 				AB1F481623E8C85900676A30 /* SuperWeather */,
 				AB1F481523E8C85900676A30 /* Products */,
 				99C3E44F396EDB78C1D841CC /* Pods */,
-				A648265FF3433958EF4F59C6 /* Frameworks */,
+				37C102F5A477F8686E5E2FE5 /* Frameworks */,
 			);
 			sourceTree = "<group>";
 		};
@@ -131,12 +142,12 @@
 			isa = PBXNativeTarget;
 			buildConfigurationList = AB1F482B23E8C85B00676A30 /* Build configuration list for PBXNativeTarget "SuperWeather" */;
 			buildPhases = (
-				0F68186D7348B3B1495F9110 /* [CP] Check Pods Manifest.lock */,
+				B2EA97BC434E59CB4D13FDB7 /* [CP] Check Pods Manifest.lock */,
 				AB1F481023E8C85900676A30 /* Sources */,
 				AB1F481123E8C85900676A30 /* Frameworks */,
 				AB1F481223E8C85900676A30 /* Resources */,
-				1FD758454BE50E1B0526241A /* [CP] Embed Pods Frameworks */,
 				AB148CF42405528800B0C1EA /* Embed Frameworks */,
+				E789474E2412C3A600426614 /* CopyFiles */,
 			);
 			buildRules = (
 			);
@@ -194,7 +205,7 @@
 /* End PBXResourcesBuildPhase section */
 
 /* Begin PBXShellScriptBuildPhase section */
-		0F68186D7348B3B1495F9110 /* [CP] Check Pods Manifest.lock */ = {
+		B2EA97BC434E59CB4D13FDB7 /* [CP] Check Pods Manifest.lock */ = {
 			isa = PBXShellScriptBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
@@ -214,23 +225,6 @@
 			runOnlyForDeploymentPostprocessing = 0;
 			shellPath = /bin/sh;
 			shellScript = "diff \"${PODS_PODFILE_DIR_PATH}/Podfile.lock\" \"${PODS_ROOT}/Manifest.lock\" > /dev/null\nif [ $? != 0 ] ; then\n    # print error to STDERR\n    echo \"error: The sandbox is not in sync with the Podfile.lock. Run 'pod install' or update your CocoaPods installation.\" >&2\n    exit 1\nfi\n# This output is used by Xcode 'outputs' to avoid re-running this script phase.\necho \"SUCCESS\" > \"${SCRIPT_OUTPUT_FILE_0}\"\n";
-			showEnvVarsInLog = 0;
-		};
-		1FD758454BE50E1B0526241A /* [CP] Embed Pods Frameworks */ = {
-			isa = PBXShellScriptBuildPhase;
-			buildActionMask = 2147483647;
-			files = (
-			);
-			inputFileListPaths = (
-				"${PODS_ROOT}/Target Support Files/Pods-SuperWeather/Pods-SuperWeather-frameworks-${CONFIGURATION}-input-files.xcfilelist",
-			);
-			name = "[CP] Embed Pods Frameworks";
-			outputFileListPaths = (
-				"${PODS_ROOT}/Target Support Files/Pods-SuperWeather/Pods-SuperWeather-frameworks-${CONFIGURATION}-output-files.xcfilelist",
-			);
-			runOnlyForDeploymentPostprocessing = 0;
-			shellPath = /bin/sh;
-			shellScript = "\"${PODS_ROOT}/Target Support Files/Pods-SuperWeather/Pods-SuperWeather-frameworks.sh\"\n";
 			showEnvVarsInLog = 0;
 		};
 /* End PBXShellScriptBuildPhase section */
@@ -390,7 +384,7 @@
 		};
 		AB1F482C23E8C85B00676A30 /* Debug */ = {
 			isa = XCBuildConfiguration;
-			baseConfigurationReference = 42847AD44360B00B24250B68 /* Pods-SuperWeather.debug.xcconfig */;
+			baseConfigurationReference = 4FB72CC4925A21C93733A3CB /* Pods-SuperWeather.debug.xcconfig */;
 			buildSettings = {
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
 				CODE_SIGN_STYLE = Automatic;
@@ -409,7 +403,7 @@
 		};
 		AB1F482D23E8C85B00676A30 /* Release */ = {
 			isa = XCBuildConfiguration;
-			baseConfigurationReference = ED1EABA44CD013AD87115271 /* Pods-SuperWeather.release.xcconfig */;
+			baseConfigurationReference = D482AC87D68D5A4A0D48EDE2 /* Pods-SuperWeather.release.xcconfig */;
 			buildSettings = {
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
 				CODE_SIGN_STYLE = Automatic;
