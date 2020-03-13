@@ -15,6 +15,7 @@ struct Weather: Codable {
     var city: String
     var windSpeed: Double
     var weatherDesc: String
+    var mainDesc: String
 }
 
 enum ErrorJSON : Error {
@@ -67,6 +68,7 @@ class WeatherGetter {
                 let windDictionary = jsonObj["wind"] as? [String: Any],
                 let windSpeed = windDictionary["speed"] as? Double,
                 let weatherDetails = jsonObj["weather"] as? [[String: Any]],
+                let mainDesc = weatherDetails[0]["main"] as? String,
                 let weatherDescription = weatherDetails[0]["description"] as? String
                 else {
                     return 
@@ -77,7 +79,8 @@ class WeatherGetter {
                 humidity: hum,
                 city: city,
                 windSpeed: windSpeed,
-                weatherDesc: weatherDescription)
+                weatherDesc: weatherDescription,
+                mainDesc: mainDesc)
             
             DispatchQueue.main.async {
                 weatherHandler(weather, error)

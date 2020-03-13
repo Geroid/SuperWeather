@@ -9,26 +9,26 @@
 import UIKit
 
 enum weatherState: String {
-    case clouds
-    case rain
-    case snow
-    case clear
-    case unknown
-
-    init(value: String) {
-        switch value {
-        case "облачно": self = .clouds
-        case "дождь": self = .rain
-        case "снег": self = .snow
-        case "ясно": self = .clear
-        default: self = .unknown
-        }
-    }
+    case clouds = "Clouds"
+    case rain = "Rain"
+    case snow = "Snow"
+    case clear = "Clear"
 }
 
 extension UIViewController {
     func changeBackgroud(weatherDescription: String) {
-        view.backgroundColor = UIColor(patternImage: UIImage(imageLiteralResourceName: "photo"))
+        switch weatherDescription {
+        case weatherState.clouds.rawValue:
+            view.backgroundColor = UIColor(patternImage: UIImage(imageLiteralResourceName: "clouds"))
+        case weatherState.rain.rawValue:
+            view.backgroundColor = UIColor(patternImage: UIImage(imageLiteralResourceName: "rain"))
+        case weatherState.snow.rawValue:
+            view.backgroundColor = UIColor(patternImage: UIImage(imageLiteralResourceName: "snow"))
+        case weatherState.clear.rawValue:
+            view.backgroundColor = UIColor(patternImage: UIImage(imageLiteralResourceName: "clear"))
+        default:
+           view.backgroundColor = UIColor(patternImage: UIImage(imageLiteralResourceName: "eberhard"))
+        }
     }
 }
 
@@ -47,14 +47,12 @@ class ViewController: UIViewController {
     
     weak var delegate: CityViewController!
     
-    var city: String = "Таганрог"
-    
-    //    var reachability = ReachabilityHandler()
+    var city = "Таганрог"
+    var mainDesc = ""
     let network = NetworkManager.sharedInstance
     
     
     @IBAction func cityButtonTapped(_ sender: UIButton) {
-        
         let myCity = self.storyboard?.instantiateViewController(withIdentifier: "CityViewController") as! CityViewController
         myCity.cityHandler = { city in
             self.city = city
@@ -65,12 +63,10 @@ class ViewController: UIViewController {
     
     @IBAction func weatherButtonTapped(_ sender: UIButton) {
         weatherUpdate()
-        changeBackgroud(weatherDescription: "")
     }
     
     
     func weatherUpdate() {
-        
         network.reachability.whenUnreachable = { reachability in
             self.showOfflinePage()
         }
@@ -83,6 +79,7 @@ class ViewController: UIViewController {
                 self.cityLabel.text = weather.city
                 self.windSpeedLabel.text = "Скорость ветра: \(weather.windSpeed) м/с"
                 self.WeatherDesc.text = (weather.weatherDesc)
+                self.changeBackgroud(weatherDescription: weather.mainDesc)
             }
             else {
                 self.WeatherDesc.text = "Error"
@@ -93,7 +90,6 @@ class ViewController: UIViewController {
     
     override func viewDidLoad() {
         super.viewDidLoad()
-        self.view.backgroundColor = UIColor(patternImage: UIImage(imageLiteralResourceName: "eberhard"))
         chooseCityButton.imageView?.contentMode = .scaleAspectFill
         weatherUpdate()
         
@@ -113,7 +109,6 @@ class ViewController: UIViewController {
     override func didReceiveMemoryWarning() {
         super.didReceiveMemoryWarning()
     }
-    
-    
+
 }
 
